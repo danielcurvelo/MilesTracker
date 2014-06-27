@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63607000195D00290063870D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63606FFF195D00290063870D /* Foundation.framework */; };
+		63607002195D00290063870D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63607001195D00290063870D /* CoreGraphics.framework */; };
+		63607004195D00290063870D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63607003195D00290063870D /* UIKit.framework */; };
+		6360700A195D00290063870D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63607008195D00290063870D /* InfoPlist.strings */; };
+		6360700C195D00290063870D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360700B195D00290063870D /* main.m */; };
+		63607010195D00290063870D /* DACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360700F195D00290063870D /* DACAppDelegate.m */; };
+		63607013195D00290063870D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63607011195D00290063870D /* Main.storyboard */; };
+		63607016195D00290063870D /* DACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63607015195D00290063870D /* DACViewController.m */; };
+		63607018195D00290063870D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63607017195D00290063870D /* Images.xcassets */; };
+		6360701F195D00290063870D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6360701E195D00290063870D /* XCTest.framework */; };
+		63607020195D00290063870D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63606FFF195D00290063870D /* Foundation.framework */; };
+		63607021195D00290063870D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63607003195D00290063870D /* UIKit.framework */; };
+		63607029195D00290063870D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63607027195D00290063870D /* InfoPlist.strings */; };
+		6360702B195D00290063870D /* MilesTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360702A195D00290063870D /* MilesTrackerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63607022195D00290063870D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63606FF4195D00290063870D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63606FFB195D00290063870D;
+			remoteInfo = MilesTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63606FFC195D00290063870D /* MilesTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilesTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63606FFF195D00290063870D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		63607001195D00290063870D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		63607003195D00290063870D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63607007195D00290063870D /* MilesTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MilesTracker-Info.plist"; sourceTree = "<group>"; };
+		63607009195D00290063870D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6360700B195D00290063870D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6360700D195D00290063870D /* MilesTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MilesTracker-Prefix.pch"; sourceTree = "<group>"; };
+		6360700E195D00290063870D /* DACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACAppDelegate.h; sourceTree = "<group>"; };
+		6360700F195D00290063870D /* DACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DACAppDelegate.m; sourceTree = "<group>"; };
+		63607012195D00290063870D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63607014195D00290063870D /* DACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACViewController.h; sourceTree = "<group>"; };
+		63607015195D00290063870D /* DACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DACViewController.m; sourceTree = "<group>"; };
+		63607017195D00290063870D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6360701D195D00290063870D /* MilesTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilesTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6360701E195D00290063870D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		63607026195D00290063870D /* MilesTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MilesTrackerTests-Info.plist"; sourceTree = "<group>"; };
+		63607028195D00290063870D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6360702A195D00290063870D /* MilesTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilesTrackerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63606FF9195D00290063870D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63607002195D00290063870D /* CoreGraphics.framework in Frameworks */,
+				63607004195D00290063870D /* UIKit.framework in Frameworks */,
+				63607000195D00290063870D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6360701A195D00290063870D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6360701F195D00290063870D /* XCTest.framework in Frameworks */,
+				63607021195D00290063870D /* UIKit.framework in Frameworks */,
+				63607020195D00290063870D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63606FF3195D00290063870D = {
+			isa = PBXGroup;
+			children = (
+				63607005195D00290063870D /* MilesTracker */,
+				63607024195D00290063870D /* MilesTrackerTests */,
+				63606FFE195D00290063870D /* Frameworks */,
+				63606FFD195D00290063870D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63606FFD195D00290063870D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63606FFC195D00290063870D /* MilesTracker.app */,
+				6360701D195D00290063870D /* MilesTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63606FFE195D00290063870D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63606FFF195D00290063870D /* Foundation.framework */,
+				63607001195D00290063870D /* CoreGraphics.framework */,
+				63607003195D00290063870D /* UIKit.framework */,
+				6360701E195D00290063870D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63607005195D00290063870D /* MilesTracker */ = {
+			isa = PBXGroup;
+			children = (
+				6360700E195D00290063870D /* DACAppDelegate.h */,
+				6360700F195D00290063870D /* DACAppDelegate.m */,
+				63607011195D00290063870D /* Main.storyboard */,
+				63607014195D00290063870D /* DACViewController.h */,
+				63607015195D00290063870D /* DACViewController.m */,
+				63607017195D00290063870D /* Images.xcassets */,
+				63607006195D00290063870D /* Supporting Files */,
+			);
+			path = MilesTracker;
+			sourceTree = "<group>";
+		};
+		63607006195D00290063870D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63607007195D00290063870D /* MilesTracker-Info.plist */,
+				63607008195D00290063870D /* InfoPlist.strings */,
+				6360700B195D00290063870D /* main.m */,
+				6360700D195D00290063870D /* MilesTracker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63607024195D00290063870D /* MilesTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6360702A195D00290063870D /* MilesTrackerTests.m */,
+				63607025195D00290063870D /* Supporting Files */,
+			);
+			path = MilesTrackerTests;
+			sourceTree = "<group>";
+		};
+		63607025195D00290063870D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63607026195D00290063870D /* MilesTrackerTests-Info.plist */,
+				63607027195D00290063870D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63606FFB195D00290063870D /* MilesTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6360702E195D00290063870D /* Build configuration list for PBXNativeTarget "MilesTracker" */;
+			buildPhases = (
+				63606FF8195D00290063870D /* Sources */,
+				63606FF9195D00290063870D /* Frameworks */,
+				63606FFA195D00290063870D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MilesTracker;
+			productName = MilesTracker;
+			productReference = 63606FFC195D00290063870D /* MilesTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6360701C195D00290063870D /* MilesTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63607031195D00290063870D /* Build configuration list for PBXNativeTarget "MilesTrackerTests" */;
+			buildPhases = (
+				63607019195D00290063870D /* Sources */,
+				6360701A195D00290063870D /* Frameworks */,
+				6360701B195D00290063870D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63607023195D00290063870D /* PBXTargetDependency */,
+			);
+			name = MilesTrackerTests;
+			productName = MilesTrackerTests;
+			productReference = 6360701D195D00290063870D /* MilesTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63606FF4195D00290063870D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DAC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = DanceologyStudio;
+				TargetAttributes = {
+					6360701C195D00290063870D = {
+						TestTargetID = 63606FFB195D00290063870D;
+					};
+				};
+			};
+			buildConfigurationList = 63606FF7195D00290063870D /* Build configuration list for PBXProject "MilesTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63606FF3195D00290063870D;
+			productRefGroup = 63606FFD195D00290063870D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63606FFB195D00290063870D /* MilesTracker */,
+				6360701C195D00290063870D /* MilesTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63606FFA195D00290063870D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63607018195D00290063870D /* Images.xcassets in Resources */,
+				6360700A195D00290063870D /* InfoPlist.strings in Resources */,
+				63607013195D00290063870D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6360701B195D00290063870D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63607029195D00290063870D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63606FF8195D00290063870D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63607016195D00290063870D /* DACViewController.m in Sources */,
+				6360700C195D00290063870D /* main.m in Sources */,
+				63607010195D00290063870D /* DACAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63607019195D00290063870D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6360702B195D00290063870D /* MilesTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63607023195D00290063870D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63606FFB195D00290063870D /* MilesTracker */;
+			targetProxy = 63607022195D00290063870D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63607008195D00290063870D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63607009195D00290063870D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		63607011195D00290063870D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63607012195D00290063870D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63607027195D00290063870D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63607028195D00290063870D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6360702C195D00290063870D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6360702D195D00290063870D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6360702F195D00290063870D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MilesTracker/MilesTracker-Prefix.pch";
+				INFOPLIST_FILE = "MilesTracker/MilesTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		63607030195D00290063870D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MilesTracker/MilesTracker-Prefix.pch";
+				INFOPLIST_FILE = "MilesTracker/MilesTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		63607032195D00290063870D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MilesTracker.app/MilesTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MilesTracker/MilesTracker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MilesTrackerTests/MilesTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		63607033195D00290063870D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MilesTracker.app/MilesTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MilesTracker/MilesTracker-Prefix.pch";
+				INFOPLIST_FILE = "MilesTrackerTests/MilesTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63606FF7195D00290063870D /* Build configuration list for PBXProject "MilesTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6360702C195D00290063870D /* Debug */,
+				6360702D195D00290063870D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6360702E195D00290063870D /* Build configuration list for PBXNativeTarget "MilesTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6360702F195D00290063870D /* Debug */,
+				63607030195D00290063870D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63607031195D00290063870D /* Build configuration list for PBXNativeTarget "MilesTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63607032195D00290063870D /* Debug */,
+				63607033195D00290063870D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63606FF4195D00290063870D /* Project object */;
+}
