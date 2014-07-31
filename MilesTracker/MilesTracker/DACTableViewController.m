@@ -76,8 +76,10 @@
     }else if (self.nameInput.text.length < 1){
         UIAlertView *inputSentMessage = [[UIAlertView alloc]initWithTitle:@"Name Needed" message:@"You need to assign a name to this trip." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         
-        [inputSentMessage show];
+       [inputSentMessage show];
     }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
