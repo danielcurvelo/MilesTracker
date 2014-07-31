@@ -1,14 +1,14 @@
 //
-//  DACFillupCell.m
-//  
+//  DACTripCell.m
+//  MilesTracker
 //
-//  Created by Mac User on 7/16/14.
-//
+//  Created by Mac User on 7/30/14.
+//  Copyright (c) 2014 DanceologyStudio. All rights reserved.
 //
 
-#import "DACFillupCell.h"
+#import "DACTripCell.h"
 
-@implementation DACFillupCell
+@implementation DACTripCell
 
 - (void)awakeFromNib
 {
