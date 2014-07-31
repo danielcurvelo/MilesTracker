@@ -10,4 +10,19 @@
 
 @implementation Trip
 
++ (NSString *)parseClassName
+{
+    return @"Trips";
+}
+//
+//-(double)getAvgMilesPerGallon
+//{
+//    
+//}
+//
+//-(void)retrieveFillups:(void (^)(NSArray *))callback
+//{
+//    
+//}
+
 @end

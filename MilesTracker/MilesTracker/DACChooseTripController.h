@@ -10,4 +10,6 @@
 
 @interface DACChooseTripController : PFQueryTableViewController
 
+@property (nonatomic,strong) void (^onTripSelected)(PFObject* trip);
+
 @end

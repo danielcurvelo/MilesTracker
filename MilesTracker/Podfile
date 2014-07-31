@@ -1,0 +1,19 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.0'
+
+target "MilesTracker" do
+
+pod 'AFNetworking', '~> 2.3'
+pod 'Parse', '~> 1.2'
+pod 'JVFloatLabeledTextField', '~> 0.0'
+pod 'Analytics/Flurry', '~> 1.2'
+pod 'LSNewsletterInvite', '~> 0.6'
+pod 'MSCMoreOptionTableViewCell', '~> 1.1'
+pod 'REFrostedViewController', '~> 2.4.5'
+pod 'iOSPlot', '~> 1.0.1'
+end
+
+target "MilesTrackerTests" do
+
+end
+

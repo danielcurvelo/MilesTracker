@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface NetworkController : NSObject
+
++ (AFHTTPSessionManager *)api;
+
++ (NSDictionary *)parameters;
 
 @end

@@ -10,4 +10,9 @@
 
 @interface DACTripCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *tripNameLabel;
+@property (strong, nonatomic) IBOutlet UIView *imageTripBackground;
+@property (strong, nonatomic) IBOutlet UILabel *motiveTripLabel;
+@property (strong, nonatomic) IBOutlet UIView *nameMotiveBackground;
+
 @end

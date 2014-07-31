@@ -7,8 +7,17 @@
 //
 
 #import "DACTableViewController.h"
+#import "Vehicles.h"
+#import <Parse/Parse.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "DACTripListViewController.h"
 
 @interface DACTableViewController ()
+@property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
+@property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *motiveInput;
+@property (strong, nonatomic) IBOutlet UIButton *createButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *goBackButton;
+@property (strong,nonatomic) PFObject *vehicle;
 
 @end
 
@@ -23,15 +32,52 @@
     return self;
 }
 
+- (IBAction)goBackButtonPressed:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.createButton.layer.cornerRadius = 8;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+- (IBAction)createTrip:(id)sender {
+    
+    if(self.nameInput.text.length >0){
+    PFObject *Object = [PFObject objectWithClassName:@"Trips"];
+    [Object setObject:[Vehicles currentVehicle] forKey:@"Vehicles"];
+        
+    [Object setObject:[Vehicles currentVehicle] forKey:@"Trips"];
+        
+    [Object setObject:self.nameInput.text forKey:@"TripName"];
+    [Vehicles currentVehicle][@"TripName"] = self.nameInput.text;
+        
+    [Object setObject:self.motiveInput.text forKey:@"Motive"];
+    [Vehicles currentVehicle][@"Motive"] = self.motiveInput.text;
+
+
+    self.nameInput.text = @"";
+    self.motiveInput.text = @"";
+    
+    [self.motiveInput resignFirstResponder];
+    
+    [[Vehicles currentVehicle] saveInBackground];
+    [Object saveInBackground];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    }else if (self.nameInput.text.length < 1){
+        UIAlertView *inputSentMessage = [[UIAlertView alloc]initWithTitle:@"Name Needed" message:@"You need to assign a name to this trip." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        
+        [inputSentMessage show];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,14 +92,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
 /*

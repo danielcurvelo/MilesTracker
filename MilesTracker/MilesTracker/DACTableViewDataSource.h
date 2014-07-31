@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DACTableViewDataSource : NSObject
+@interface DACTableViewDataSource : NSObject <UITableViewDataSource>
 
 @end

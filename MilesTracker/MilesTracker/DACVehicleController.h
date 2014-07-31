@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Vehicles.h"
 
-@interface DACVehicleController : UIViewController
+@interface DACVehicleController : NSObject
+
++ (DACVehicleController *)sharedInstance;
+
+- (void)searchForVehicles:(NSString *)vinString completion:(void (^)(BOOL success, Vehicles *vehicle))completion;
+
+@property (nonatomic, strong) Vehicles *resultVehicle;
 
 @end

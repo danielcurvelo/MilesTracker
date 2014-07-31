@@ -7,6 +7,8 @@
 //
 
 #import "DACVehicleController.h"
+#import "Vehicles.h"
+#import "NetworkController.h"
 
 @interface DACVehicleController ()
 
@@ -14,36 +16,27 @@
 
 @implementation DACVehicleController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
++ (DACVehicleController *)sharedInstance {
+    static DACVehicleController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [DACVehicleController new];
+    });
+    return sharedInstance;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(void)searchForVehicles:(NSString *)vinString completion:(void (^)(BOOL, Vehicles *))completion{
+    NSString *path =[NSString stringWithFormat:@"/api/vehicle/v2/vins/%@", vinString];
+    [[NetworkController api] GET:path parameters:[NetworkController parameters] success:^(NSURLSessionDataTask *task, id responseObject) {
+        self.resultVehicle = [Vehicles object];
+        [self.resultVehicle updateWithDictionary:responseObject];
+        [self.resultVehicle saveEventually];
+        completion(YES, self.resultVehicle);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        completion(NO, nil);
+    }];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

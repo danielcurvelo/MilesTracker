@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <REFrostedViewController/REFrostedViewController.h>
 
-@interface DACMenuController : UIViewController
+@interface DACMenuController : REFrostedViewController
 
 @end

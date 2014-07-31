@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <iOSPlot/PCLineChartView.h>
 
-@interface DACCarInfoViewController : UIViewController
+@interface DACCarInfoViewController : UIViewController 
+@property (nonatomic, strong) PCLineChartView *lineChartView;
 
 @end

@@ -10,6 +10,10 @@
 
 @interface LoginViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *signUpBtn;
+@property (strong, nonatomic) IBOutlet UITextField *usernameInput;
+@property (strong, nonatomic) IBOutlet UITextField *passwordInput;
+@property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 @end
 
 @implementation LoginViewController

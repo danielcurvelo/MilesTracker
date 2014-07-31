@@ -10,4 +10,6 @@
 
 @interface DACNavigationController : UINavigationController
 
+- (void)panGestureRecognized:(UIPanGestureRecognizer *)sender;
+
 @end

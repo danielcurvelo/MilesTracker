@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 
-@interface DACTripListViewController : PFQueryTableViewController
+@interface DACTripListViewController : PFQueryTableViewController <UIAlertViewDelegate>
 
+@property (nonatomic,strong) PFObject *tripTitle;
 @end

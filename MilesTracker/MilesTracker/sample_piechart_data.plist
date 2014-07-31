@@ -6,31 +6,31 @@
 	<array>
 		<dict>
 			<key>title</key>
-			<string>AAA</string>
+			<string>Yellow</string>
 			<key>value</key>
 			<integer>12</integer>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>BBB</string>
+			<string>Green</string>
 			<key>value</key>
 			<integer>30</integer>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>CCC</string>
+			<string>Orange</string>
 			<key>value</key>
 			<integer>10</integer>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>DDD</string>
+			<string>Red</string>
 			<key>value</key>
 			<integer>30</integer>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>EEE</string>
+			<string>Blue</string>
 			<key>value</key>
 			<integer>40</integer>
 		</dict>

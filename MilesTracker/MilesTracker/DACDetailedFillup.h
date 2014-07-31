@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface DACDetailedFillup : UIViewController
+
+@property (nonatomic,strong) PFObject *fillup;
 
 @end

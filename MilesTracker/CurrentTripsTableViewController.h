@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface CurrentTripsTableViewController : UITableViewController
+@interface CurrentTripsTableViewController : PFQueryTableViewController
+
+@property (nonatomic,strong) PFObject* trip;
 
 @end

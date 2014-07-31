@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Vehicles : NSObject
+@interface Vehicles : PFObject <PFSubclassing>
+
++ (NSString *)parseClassName;
+@property (nonatomic, strong) NSString *cityMPG;
+@property (nonatomic, strong) NSString *highwayMPG;
+@property (nonatomic, strong) NSString *vehicleMake;
+@property (nonatomic, strong) NSString *vehicleModel;
+@property (nonatomic, strong) NSString *vehicleYear;
+@property (nonatomic, strong) NSString *vehiclePic;
+
+- (void)updateWithDictionary:(NSDictionary *)dictionary;
+
++ (Vehicles *)currentVehicle;
++ (void)setCurrentVehicle:(Vehicles *)vehicle;
 
 @end

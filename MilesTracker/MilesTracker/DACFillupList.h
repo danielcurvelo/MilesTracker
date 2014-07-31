@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface DACFillupList : PFQueryTableViewController
+@interface DACFillupList : PFQueryTableViewController <UIAlertViewDelegate>
 
 @end

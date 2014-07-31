@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Trip : NSObject
+@interface Trip : PFObject <PFSubclassing>
+
 
 @end

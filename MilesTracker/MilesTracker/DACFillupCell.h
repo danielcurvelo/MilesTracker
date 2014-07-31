@@ -10,4 +10,12 @@
 
 @interface DACFillupCell : PFTableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *fillupNameLabel;
+@property (strong, nonatomic) IBOutlet UIView *gasBackground;
+@property (strong, nonatomic) IBOutlet UIView *mpgBackground;
+@property (strong, nonatomic) IBOutlet UILabel *mpgLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+
 @end

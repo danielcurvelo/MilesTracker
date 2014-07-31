@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
-@interface DACViewController : UIViewController
+@interface DACViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+
+-(void)retrieveParse:(NSArray *)objects;
+
 
 @end

@@ -10,4 +10,5 @@
 
 @interface DACChooseVehicle : PFQueryTableViewController
 
+@property (nonatomic,strong) void (^onVehicleSelected)(void);
 @end

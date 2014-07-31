@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>84D728A7-377A-4B9E-874D-8AF6CF4A4CB9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MilesTracker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3B83733-F1DB-489D-99AD-C476886D079A</key>
+		<string>https://github.com/danielcurvelo/MilesTracker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MilesTracker/MilesTracker.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3B83733-F1DB-489D-99AD-C476886D079A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/danielcurvelo/MilesTracker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3B83733-F1DB-489D-99AD-C476886D079A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3B83733-F1DB-489D-99AD-C476886D079A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MilesTracker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -10,4 +10,7 @@
 
 @interface TripInputController : UITableViewController
 
+@property (readwrite,nonatomic) double MPG;
+@property (readwrite,nonatomic) double Price;
+
 @end

@@ -7,13 +7,56 @@
 //
 
 #import "DACAppDelegate.h"
+#import "DACViewController.h"
+#import "CurrentTripsTableViewController.h"
+#import "DACMenuController.h"
+#import "Vehicles.h"
+#import <Parse/Parse.h>
+#import <FlurrySDK/Flurry.h>
+#import <Analytics/Analytics.h>
+#import <LSNewsletterInvite/LSNewsletterInvite.h>
+#import <IOSPlot/PCPieChart.h>
+#import "Trip.h"
 
 @implementation DACAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+        
+//    [LSNewsletterInvite appLaunched:YES viewController:viewController andSettings:nil];
+    [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"]];
+    [Vehicles registerSubclass];
+    [Trip registerSubclass];
+
+    
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"YWyvnZvxEgzUUzVHI4aR5zWQ4yjxchX3HYyYxeU4"
+                  clientKey:@"LwBMTp0SePIV0rKqNU3yFjMEJcVcDv3muQSCUWbw"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+//    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+//     setTintColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0]];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTintColor:[UIColor orangeColor]];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:17/255.0f green:69/255.0f blue:114/255.0f alpha:1.0]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:17/255.0f green:69/255.0f blue:114/255.0f alpha:1.0]];
+    UIView *goldenView = [[UIView alloc] init];
+    goldenView.backgroundColor = [UIColor colorWithRed:247/255.0f green:226/255.0f blue:111/255.0f alpha:1.0];
+    [[UITableViewCell appearance] setSelectedBackgroundView:goldenView];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName: [UIColor orangeColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"Avenir-Light" size:20]
+                                                           }];
     return YES;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
