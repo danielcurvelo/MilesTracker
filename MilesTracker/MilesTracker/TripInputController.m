@@ -16,12 +16,10 @@
 #import <MapKit/MapKit.h>
 
 @interface TripInputController () <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,MKMapViewDelegate, CLLocationManagerDelegate>
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *MilesInput;
 @property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *totalInput;
 @property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *gallonsInput;
 @property (strong, nonatomic) IBOutlet UIButton *chooseATripBtn;
-@property (strong, nonatomic) IBOutlet UILabel *tripLabel;
 @property (nonatomic, strong) PFObject *trip;
 @property (nonatomic, strong) PFObject *vehicle;
 @property (nonatomic, strong) PFObject *fillup;
@@ -38,14 +36,16 @@
 @property (readwrite,nonatomic) double total;
 @property (readwrite,nonatomic) double mileage;
 @property (strong, nonatomic) IBOutlet UILabel *perGallonLabel;
-@property (strong, nonatomic) IBOutlet UIButton *getLocation;
 @property (strong, nonatomic) IBOutlet UITextField *OdometerInput;
 @property (readwrite,nonatomic) double milesFromOdometer;
 @property (strong,nonatomic) NSMutableArray *milesArray;
 @property (strong,nonatomic) NSMutableArray *gallonsArray;
-@property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
-@property (strong,nonatomic) PFGeoPoint *userLocation;
 @property (strong, nonatomic) IBOutlet UIButton *captureBtnInImage;
+@property (strong, nonatomic) IBOutlet UILabel *currentOdometer;
+@property (strong, nonatomic) IBOutlet UIView *odometerBackground;
+@property (strong, nonatomic) IBOutlet UIButton *submitBtn;
+@property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (strong,nonatomic) UIImage *image;
 
 @end
 
@@ -72,9 +72,10 @@
     
     [self getOdometerCalculations];
     
-    self.perGallonLabel.layer.borderWidth = 2;
-    self.perGallonLabel.layer.borderColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0].CGColor;
-    
+//    self.perGallonLabel.layer.borderWidth = 2;
+//    self.perGallonLabel.layer.borderColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0].CGColor;
+//    self.perGallonLabel.layer.cornerRadius = 8;
+
     self.milesBackground.layer.cornerRadius = 36;
     self.milesBackground.layer.borderWidth = 2;
     self.milesBackground.layer.borderColor = [UIColor orangeColor].CGColor;
@@ -93,23 +94,18 @@
     self.receiptImageView.layer.cornerRadius = 8;
     self.receiptImageView.layer.borderWidth = 2;
     self.receiptImageView.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.perGallonLabel.layer.cornerRadius = 8;
     
-    self.tripLabel.layer.borderWidth = 1;
-    self.tripLabel.layer.borderColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0].CGColor;
+    self.chooseATripBtn.layer.cornerRadius = 8;
+    self.odometerBackground.layer.borderWidth = 1;
+    self.odometerBackground.layer.borderColor =[UIColor orangeColor].CGColor;
+    self.odometerBackground.layer.cornerRadius = 8;
     self.MilesInput.delegate = self;
     self.totalInput.delegate = self;
-    self.getLocation.layer.cornerRadius = 10;
-
-    self.mapView.delegate = self;
     
-    CLLocationCoordinate2D test = CLLocationCoordinate2DMake(40.435377, -111.890774);
-    MyAnnotation *annote2 = [[MyAnnotation alloc] initWithTitle:@"Adobe Systems" location:test];
-    [self.mapView addAnnotation:annote2];
+    self.submitBtn.layer.cornerRadius = 8;
+    self.cancelBtn.layer.cornerRadius = 8;
     
-//    locationManager = [[CLLocationManager alloc] init];
-//    locationManager.delegate = self;
-//    [locationManager startUpdatingLocation];
+    self.currentOdometer.text = [NSString stringWithFormat:@"Current Odometer %@ miles",[Vehicles currentVehicle][@"Odometer"]];
     
 }
 
@@ -119,56 +115,6 @@
 
 }
 
-//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-//    NSLog(@"locationDidFailWithError: %@", error);
-//    [[[UIAlertView alloc] initWithTitle:@"Error" message:@"We failed to get your location. You can edit your profile and set your location under the profile tab." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]show];
-//    [locationManager stopUpdatingLocation];
-//    locationManager = nil;
-//}
-
-- (IBAction)getLocationNow:(id)sender {
-
-            self.currentLocationLabel.text = @"Adobe, Lehi, UT 84043";
-}
-
-//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-//    CLLocation *currentLocation = [locations lastObject];
-//    if (currentLocation != nil) {
-//        NSLog(@"long %@",[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude]);
-//        NSLog(@"lat %@",[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
-//        
-//    }
-//    
-//    [locationManager stopUpdatingLocation];
-//    locationManager = nil;
-//    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-//    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//        if (error == nil && [placemarks count] > 0) {
-//            CLPlacemark *placemark = [placemarks lastObject];
-//            NSLog(@"placename %@", placemark.name);
-//            NSLog(@"subThoroughfare %@", placemark.subThoroughfare);
-//            NSLog(@"thoroughfare %@", placemark.thoroughfare);
-//            NSLog(@"subLocality %@", placemark.subLocality);
-//            NSLog(@"locality %@", placemark.locality);
-//            NSLog(@"subAdministrativeArea %@", placemark.subAdministrativeArea);
-//            NSLog(@"administrativeArea %@", placemark.administrativeArea);
-//            NSLog(@"postalCode %@", placemark.postalCode);
-//            NSLog(@"inlandWater %@", placemark.inlandWater);
-//            NSLog(@"ocean %@", placemark.ocean);
-//            NSLog(@"areasOfInterest %@", placemark.areasOfInterest);
-//        } else {
-//            NSLog(@"Location error %@", error.debugDescription);
-//        }
-//    }];
-//}
-
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    NSLog(@"cool");
-    
-//    CLLocationCoordinate2D loc = self.mapView.userLocation.location.coordinate;
-//    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(loc, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
-//    [self.mapView setRegion:reg];
-}
 
 - (IBAction)gallonsTextField:(id)sender {
     self.gallons = [[self.gallonsInput text] doubleValue];
@@ -188,7 +134,7 @@
 
 -(void)getOdometerCalculations
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"fillup"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Vehicles"];
     [query getObjectInBackgroundWithId:[Vehicles currentVehicle].objectId block:^(PFObject *vehicleData, NSError *error) {
         self.milesArray =[[NSMutableArray alloc] initWithObjects:[Vehicles currentVehicle][@"Odometer"],nil];
         self.gallonsArray =[[NSMutableArray alloc] initWithObjects:[Vehicles currentVehicle][@"Gallons"],nil];
@@ -210,7 +156,7 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
@@ -223,9 +169,10 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    self.receiptImageView.image = image;
+    self.image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    self.receiptImageView.image = self.image;
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -236,7 +183,8 @@
         [TripController setOnTripSelected:^(PFObject *trip) {
             self.trip = trip;
             [self dismissViewControllerAnimated:YES completion:nil];
-            self.tripLabel.text = trip[@"TripName"];
+//            self.tripLabel.text = trip[@"TripName"];
+            [self.chooseATripBtn setTitle:trip[@"TripName"] forState:UIControlStateNormal];
         }];
     }
 }
@@ -249,7 +197,7 @@
     
     if (self.gallonsInput.text.length > 0 && self.totalInput.text.length > 0){
     self.Price = self.total / self.gallons;
-    self.perGallonLabel.text = [NSString stringWithFormat:@"$%0.2f /gallon",self.Price];
+    self.perGallonLabel.text = [NSString stringWithFormat:@"Price per Gallons:$%0.2f",self.Price];
     }else{
         self.perGallonLabel.text = @"";
     }
@@ -260,11 +208,16 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     
-    if (self.tripLabel.text.length > 0){
+    if (self.trip){
     fillup = [PFObject objectWithClassName:@"fillup"];
 //    fillup.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
     [fillup setObject:[Vehicles currentVehicle] forKey:@"Vehicles"];
-        
+    NSData *imageData = UIImagePNGRepresentation(self.image);
+    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+    
+        if(self.image){
+            fillup[@"imageFile"] = imageFile;
+        }
     fillup[@"Gallons"] = self.gallonsInput.text;
     self.trip[@"Gallons"] = self.gallonsInput.text;
     [Vehicles currentVehicle][@"Gallons"] = self.gallonsInput.text;
@@ -307,6 +260,7 @@
         self.trip[@"Price"] = [NSString stringWithFormat:@"%0.2f", self.Price];
         [Vehicles currentVehicle][@"Price"] = [NSString stringWithFormat:@"%0.2f", self.Price];
         NSLog(@"The Price is: %0.2f",self.Price);
+        
         
     [fillup saveInBackground];
     [self.trip saveInBackground];

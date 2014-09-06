@@ -104,6 +104,7 @@ static NSString *cellIdentifier = @"DACFillupCell";
 //        cell = [[MSCMoreOptionTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
 //                                                 reuseIdentifier:cellIdentifier];
 //    }
+    
     NSDate *logDate = [object createdAt];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
@@ -122,7 +123,7 @@ static NSString *cellIdentifier = @"DACFillupCell";
         [self loadObjects];
 }
 
-- (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     // This will create a "invisible" footer
     return 0.01f;
 }
@@ -137,9 +138,7 @@ static NSString *cellIdentifier = @"DACFillupCell";
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

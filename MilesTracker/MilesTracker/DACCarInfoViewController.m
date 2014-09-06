@@ -45,6 +45,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *highwayMPGLabelBackground;
 @property (strong, nonatomic) IBOutlet UILabel *cityMPGLabel;
 @property (strong, nonatomic) IBOutlet UILabel *highwayMPGLabel;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *logOutBtn;
 @property (strong, nonatomic) IBOutlet UIView *carInfoBackground;
 @end
 
@@ -58,6 +59,14 @@
 	}
 	return self;
 
+}
+- (IBAction)logOut:(id)sender {
+    [PFUser logOut];
+    
+    if (![PFUser currentUser]) {
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -163,7 +172,6 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor =[UIColor colorWithRed:17/255.0f green:69/255.0f blue:114/255.0f alpha:1.0];
     self.carInfoBackground.layer.borderColor = [UIColor orangeColor].CGColor;
     self.carInfoBackground.layer.borderWidth = 1;
     self.carInfoBackground.layer.cornerRadius = 10;

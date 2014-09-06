@@ -22,9 +22,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-        
 //    [LSNewsletterInvite appLaunched:YES viewController:viewController andSettings:nil];
     [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"]];
+    
     [Vehicles registerSubclass];
     [Trip registerSubclass];
 

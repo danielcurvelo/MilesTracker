@@ -264,12 +264,11 @@
 				635F0D7719719FFF00B6FC27 /* API */,
 				635F0D62196F841600B6FC27 /* DACCarInfoViewController.h */,
 				635F0D63196F841600B6FC27 /* DACCarInfoViewController.m */,
-				6371484F1988BFBD0022B9DB /* LoginViewController.h */,
-				637148501988BFBD0022B9DB /* LoginViewController.m */,
 				6399DD0C197EEE8F0051BDCF /* DACChooseVehicle.h */,
 				6399DD0D197EEE8F0051BDCF /* DACChooseVehicle.m */,
 				63ACEAB91976F8B0008BD20F /* DACFillupList.h */,
 				63ACEABA1976F8B0008BD20F /* DACFillupList.m */,
+				63CF554F199695D30090F5EE /* Login */,
 				63607062195F418A0063870D /* CurrentTripsTableViewController.h */,
 				63607063195F418A0063870D /* CurrentTripsTableViewController.m */,
 				6399DD1D19839A140051BDCF /* sample_piechart_data.plist */,
@@ -278,8 +277,6 @@
 				6360700E195D00290063870D /* DACAppDelegate.h */,
 				6360700F195D00290063870D /* DACAppDelegate.m */,
 				63607011195D00290063870D /* Main.storyboard */,
-				637148521988C2920022B9DB /* SignUpViewController.h */,
-				637148531988C2920022B9DB /* SignUpViewController.m */,
 				63ACEAD5197ACFAD008BD20F /* DACDetailedFillup.h */,
 				63ACEAD6197ACFAD008BD20F /* DACDetailedFillup.m */,
 				63ACEAD21978B0A9008BD20F /* DACChooseTripController.h */,
@@ -337,6 +334,17 @@
 				63714849198437B10022B9DB /* MyAnnotation.m */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		63CF554F199695D30090F5EE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				637148521988C2920022B9DB /* SignUpViewController.h */,
+				637148531988C2920022B9DB /* SignUpViewController.m */,
+				6371484F1988BFBD0022B9DB /* LoginViewController.h */,
+				637148501988BFBD0022B9DB /* LoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

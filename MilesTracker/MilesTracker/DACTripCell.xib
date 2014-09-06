@@ -44,7 +44,7 @@
                         </subviews>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageTripBackground" destination="c9Y-Ih-oEZ" id="8Hj-oB-v2J"/>

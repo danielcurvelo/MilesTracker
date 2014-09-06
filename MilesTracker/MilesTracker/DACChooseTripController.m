@@ -83,7 +83,6 @@
     cell.textLabel.text = object[@"TripName"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",
                                  object[@"Motive"]];
-    cell.backgroundColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:204/255.0f alpha:1.0];
     UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0.1)];
     separatorLineView.backgroundColor = [UIColor blackColor]; // set color as you want.
     [cell.contentView addSubview:separatorLineView];
